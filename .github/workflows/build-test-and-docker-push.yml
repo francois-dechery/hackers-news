@@ -5,8 +5,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      VUE_APP_ROLLOUT_KEY: ${{ secrets.VUE_APP_ROLLOUT_KEY }}
+#    env:
+#      VUE_APP_ROLLOUT_KEY: ${{ secrets.VUE_APP_ROLLOUT_KEY }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
