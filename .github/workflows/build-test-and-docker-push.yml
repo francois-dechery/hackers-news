@@ -37,17 +37,16 @@ jobs:
       - uses: docker/login-action@v3
         with:
           registry: docker.io             # or ghcr.io
-  #        username: ${{ secrets.DOCKER_USER }}
-          username: ${{ variables.DOCKER_USER }}
-  #       username: 'francoisdechery'
+  #       username: ${{ secrets.DOCKER_USER }}
+          username: 'francoisdechery'
           password: ${{ secrets.DOCKER_TOKEN }}
 
       - name: Build Docker image
   #      run: docker build -t ${{ secrets.REGISTRY_USER }}/hackers-news:${{ github.sha }} .
   #      run: docker build -t ${{ secrets.DOCKER_USER }}/hackers-news:${{ github.sha }} .
-        run: docker build -t francoisdechery/hackers-news:${{ github.sha }} .
+        run: docker build -t ${{ secrets.DOCKER_USER }}/hackers-news:${{ github.sha }} .
 
       - name: Push Docker image
   #      run: docker push ${{ secrets.REGISTRY_USER }}/hackers-news:${{ github.sha }}
   #      run: docker push ${{ secrets.DOCKER_USER }}/hackers-news:${{ github.sha }}
-        run: docker push francoisdechery/hackers-news:${{ github.sha }}
+        run: docker push ${{ secrets.DOCKER_USER }}/hackers-news:${{ github.sha }}
