@@ -37,8 +37,8 @@ jobs:
       - uses: docker/login-action@v3
         with:
           registry: docker.io             # or ghcr.io
-  #       username: ${{ secrets.DOCKER_USER }}
-          username: 'francoisdechery'
+          username: ${{ secrets.DOCKER_USER }}
+          # username: 'francoisdechery'
           password: ${{ secrets.DOCKER_TOKEN }}
 
       - name: Build Docker image
