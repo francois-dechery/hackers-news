@@ -44,9 +44,9 @@ jobs:
       - name: Build Docker image
   #      run: docker build -t ${{ secrets.REGISTRY_USER }}/hackers-news:${{ github.sha }} .
   #      run: docker build -t ${{ secrets.DOCKER_USER }}/hackers-news:${{ github.sha }} .
-        run: docker build -t ${{ secrets.DOCKER_USER }}/hackers-news:${{ github.sha }} .
+        run: docker build -t hackers-news:{{ secrets.DOCKER_USER }} .
 
       - name: Push Docker image
   #      run: docker push ${{ secrets.REGISTRY_USER }}/hackers-news:${{ github.sha }}
   #      run: docker push ${{ secrets.DOCKER_USER }}/hackers-news:${{ github.sha }}
-        run: docker push ${{ secrets.DOCKER_USER }}/hackers-news:${{ github.sha }}
+        run: docker push hackers-news:${{ secrets.DOCKER_USER }}
