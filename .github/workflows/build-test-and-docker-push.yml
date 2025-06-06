@@ -38,7 +38,8 @@ jobs:
         with:
           registry: docker.io             # or ghcr.io
   #        username: ${{ secrets.DOCKER_USER }}
-          username: 'francoisdechery'
+          username: ${{ variables.DOCKER_USER }}
+  #       username: 'francoisdechery'
           password: ${{ secrets.DOCKER_TOKEN }}
 
       - name: Build Docker image
